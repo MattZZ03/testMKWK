@@ -9,7 +9,7 @@
         html, body {
             scroll-behavior: smooth;
             scroll-padding-top: 115px;
-            background-color: darkslategrey;
+            background: linear-gradient(135deg, rgb(50, 87, 50), rgb(26, 49, 41), rgb(35, 61, 47), rgb(31, 53, 52),  rgb(42, 71, 71), rgb(69, 113, 113));
         }
 
         .materi{
@@ -19,14 +19,18 @@
             justify-content: center;
         }
 
+        
 .img-wrap {
     position: relative;
     display: inline-block; /* wrapper shrinks to the image size */
+    overflow: hidden;      
 }
 
 .img-wrap img {
     display: block;
     width: 100%;
+    filter: blur(1px) brightness(0.7);  /* blur + slightly darker */
+    transform: scale(1.05); 
 }
 
 .img-text {
@@ -35,6 +39,7 @@
     display: flex;
     align-items: center;      /* vertical center */
     justify-content: center;  /* horizontal center */
+    text-align: center;
     color: white;
     font-size: 2rem;
     font-weight: bold;
@@ -57,6 +62,12 @@
     max-width: 400px;
     height: 220px;
     perspective: 1000px;
+}
+
+table th,
+table td {
+    border: 1px solid white;
+    padding: 10px;
 }
 
 .flip-card-inner {
@@ -136,22 +147,150 @@
     color: #212529;
 }
 
+.pengantar {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 1rem;
+    color: #f1f5f9;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.pengantar h1 {
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #4fd1c5;
+}
+
+.tatacara {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 2rem 2.5rem;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 1rem;
+    color: #f1f5f9;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Heading */
+.tatacara h2 {
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #4fd1c5;
+}
+
+/* Step titles */
+.tatacara ol {
+    padding-left: 1.75rem;
+}
+
+.tatacara li {
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.tatacara li::marker {
+    color: white;
+    font-weight: 800;
+}
+
+/* Explanation under each step */
+.tatacara ol > p {
+    margin: 0.25rem 0 0;
+    padding-left: 0.75rem;
+    border-left: 3px solid rgba(79, 209, 197, 0.5);
+    color: #dbe4ee;
+    font-size: 1.05rem;
+}
+
+/* Table */
+.tatacara table {
+    margin-top: 1rem;
+    border-collapse: collapse;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.tatacara table th {
+    background: rgba(79, 209, 197, 0.25);
+}
+
+.tatacara table th,
+.tatacara table td {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 10px;
+}
+
+.etika {
+    max-width: 1300px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 1rem;
+    color: #f1f5f9;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.etika h2 {
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #4fd1c5;
+}
+
+.salar {
+    max-width: 1300px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 1rem;
+    color: #f1f5f9;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.salar h2 {
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #4fd1c5;
+}
+
+.tutor h1{
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+}
+
     </style>
 </head>
 
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Start of Navigation Bar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" style="width: 100%;">
   <div class="container-fluid">
-    <img src="img/logo.jpeg" style="height: 50px; width: 50px;">
+    <img src="img/logo.jpeg" style="height: 50px; width: 50px; border-radius: 50%;">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
+        
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="#">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#pengantar">Kata Pengantar</a>
         </li>
 
         <li class="nav-item">
@@ -171,7 +310,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#footer">Footer</a>
+          <a class="nav-link" href="#footer">Follow Us</a>
         </li>
             </ul>
             </div>
@@ -182,124 +321,60 @@
     <!-- Start of image of MKWK Team -->
         <div class="img-wrap">
             <img src="img/kelompok.jpeg" alt="Foto Anggota MKWK">
-            <div class="img-text">Selamat Datang di Web MKWK <br> a</div>
+            <div class="img-text">Selamat Datang di Web Edukasi <br>Tata Krama Penggunaan Bus Trans Metro Deli</div>
         </div>
     <!-- End of image of MKWK Team -->
 
+    <!-- Start of Kata Pengantar -->
+    <div class="pengantar reveal" id="pengantar">
 
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
+        <h1 class="text-center mb-5" style="color: #FFFFFF;">Kata Pengantar</h1>
 
+        <div>
+            <div class="text-center mb-5" style="color: #FFFFFF;">
+                <p>Selamat datang di website edukasi tata cara dan tata krama penggunaan Bus Trans Metro Deli! </p>
+                <p>Website ini dikembangkan sebagai media informasi dan edukasi bagi masyarakat, khususnya pengguna transportasi umum di Kota Medan.<br>Melalui website ini, pengunjung dapat mempelajari tata cara menggunakan Bus Trans Metro Deli, mulai dari memantau posisi bus, menunggu di halte, melakukan pembayaran, hingga turun di halte tujuan dengan benar.</p>
+                <p>Selain itu, website ini juga menyediakan informasi mengenai etika selama berada di dalam bus, hal-hal yang dianjurkan dan perlu dihindari, serta video tutorial untuk membantu pengguna memahami proses penggunaan bus dengan lebih mudah.</p>
+                <p>Tujuan dikembangkannya website ini adalah untuk meningkatkan pemahaman masyarakat tentang penggunaan transportasi umum yang tertib, aman, nyaman, dan bertanggung jawab.<br>Kami berharap website ini dapat menjadi sumber informasi yang bermanfaat sekaligus mendorong terciptanya budaya menggunakan transportasi umum yang lebih baik.</p>
+                <p>Terima kasih telah mengunjungi website kami. Semoga informasi yang disajikan dapat memberikan manfaat bagi setiap pengunjung!</p>
+            </div>
+        </div>
 
-<!-- Bagian Tata Cara Penggunaan Bus -->
+    </div>
+    <!-- End of Kata Pengantar -->
+
+<!-- Start of Tata Cara Penggunaan Bus -->
 <div class="tatacara reveal" id="tatacara">
-    <h2>Tata Cara Penggunaan Bus Trans Metro Deli</h2>
+    <h2 class="text-center mb-5" style="color: #FFFFFF;">Tata Cara Penggunaan Bus Trans Metro Deli</h2>
 
+    <div class="wrapper mt-5 mb-5">
     <ol>
 
         <b><li>
             Pantau Posisi Bus
         </b></li>
-        <p>Saat ingin menaiki bus, pantau posisi bus yang menuju halte Anda menggunakan link <a href="https://apeksi.medan.go.id/bus-listrik" target="_blank">Apeksi</a>. Perhatikan nomor bus, halte tujuan, dan jam keberangkatan.</p>
+        <p>Saat ingin menaiki bus, pantau posisi bus yang menuju halte Anda menggunakan link <a href="https://apeksi.medan.go.id/bus-listrik" target="_blank" style="text-decoration: none;">Apeksi</a>. Perhatikan nomor bus, halte tujuan, dan jam keberangkatan.</p>
         <img class="materi" src="img/apeksi.png" alt="Tampilan Web Apeksi">
+        <br>
 
         <b><li>
             Tunggu Bus di Halte terdekat
         </b></li>
         <p>Penumpang wajib menunggu di Halte atau Titik Pemberhentian Bus (TPB) resmi. Bus tidak akan berhenti untuk menaikkan atau menurunkan penumpang di sembarang tempat</p>
         <img class="materi" src="img/halte.png" alt="Tampilan Halte Bus">
+        <br>
 
         <b><li>
             Naik ke Bus
         </b></li>
         <p>Saat bus tiba di halte, jangan langsung naik. Utamakan penumpang yang turun dari bus, lalu kalian boleh naik.</p>
+        <br>
 
         <b><li>
             Sistem Pembayaran(Tap-In)
         </b></li>
         <p>Pembayaran bersifat 100% non-tunai, jadi siapkan kartu uang elektronik kalian</p>
-        <table border="1" cellpadding="10" cellspacing="10" style="width: 100%; text-align: center;">
+        <table style="width: 70%; text-align: center; border-collapse: collapse; border: 1px solid white;">
             <tr>
                 <th>Jenis Pembayaran</th>
                 <th>Kompatibilitas</th>
@@ -321,6 +396,7 @@
                 <td>❌</td>
             </tr>
             </table>
+            <br>
 
         <b><li>
             Cara Pembayaran
@@ -333,23 +409,29 @@
                 <li>Jika anda menggunakan QR Code e-Wallet atau QRIS Tap, scan kode QR yang ditampilkan oleh petugas bus atau tampilkan "QR bayar" ke mesin scanner.</li>
             </ul>
         </div>
+        <br>
 
         <b><li>
             Nikmati Perjalanan
         </b></li>
         <p>Setelah berhasil melakukan pembayaran, silahkan pilih tempat duduk yang nyaman jika masih tersedia atau berdiri di area yang tidak mengganggu kenyamanan penumpang lain.</p>
+        <br>
 
         <b><li>
             Saat Halte Tujuan Sudah Dekat
         </b></li>
         <p>Saat bus sudah dekat dengan halte tujuan anda, tekan tombol peringatan untuk memberi tahu sopir bahwa anda akan turun. Kemasi barang anda, jangan sampai ada barang yang tertinggal.</p>
-        
+        <br>
+
         <b><li>
             Turun dari Bus
         </b></li>
         <p>Saat bus tiba di halte tujuan, segera turun agar tidak menghalangi penumpang lain yang ingin naik.</p>
 
     </ol>
+
+    </div>
+
 </div>
 <!-- End of Tata Cara penggunaan Bus -->
 
@@ -358,7 +440,7 @@
 
     <div class="container py-5">
 
-    <h2 class="text-center mb-5">Etika di Dalam Bus</h2>
+    <h2 class="text-center" style="color: #FFFFFF;">Etika di Dalam Bus</h2>
 
     <div class="row g-4">
 
@@ -378,7 +460,7 @@
                     <div class="flip-card-back card shadow">
                         <div class="card-body text-center">
                             <h3>Hargai Kursi Prioritas</h3>
-                            <p>Jangan duduk di kursi yang ditandai dengan <br>"Kursi Prioritas" yang berwarna merah</p>
+                            <p>Jangan duduk di kursi yang ditandai dengan <br>"Kursi Prioritas" yang bertanda khusus <br> (Biasanya berwarna merah).</p>
                         </div>
                     </div>
 
@@ -404,7 +486,7 @@
                     <div class="flip-card-back card shadow">
                         <div class="card-body text-center">
                             <h3>Geser ke Area Tengah</h3>
-                            <p>Jika harus berdiri, jangan menghalangi jalan atau area yang dapat mengganggu kenyamanan penumpang lain</p>
+                            <p>Jika harus berdiri, jangan menghalangi jalan atau area yang dapat mengganggu kenyamanan penumpang lain.</p>
                         </div>
                     </div>
 
@@ -430,7 +512,7 @@
                     <div class="flip-card-back card shadow">
                         <div class="card-body text-center">
                             <h3>Jaga Ketenangan</h3>
-                            <p>Hindari mengobrol terlalu keras atau memutar video/musik yang dapat mengganggu kenyamanan orang lain yang berada di dalam bus</p>
+                            <p>Hindari mengobrol terlalu keras atau memutar video/musik yang dapat mengganggu kenyamanan orang lain yang berada di dalam bus.</p>
                         </div>
                     </div>
 
@@ -456,7 +538,7 @@
                     <div class="flip-card-back card shadow">
                         <div class="card-body text-center">
                             <h3>Sopan Santun Berdiri</h3>
-                            <p>Berdirilah menghadap ke depan atau ke samping</p>
+                            <p>Berdirilah menghadap ke depan atau ke samping, Jangan berdiri dengan cara yang mengganggu penumpang lainnya.</p>
                         </div>
                     </div>
 
@@ -473,7 +555,7 @@
 
 <!-- Saran dan Larangan dalam penggunaan bus -->
 <div class="salar reveal" id="salar">
-    <h2><i>Do's & Don'ts</i> dalam Penggunaan Bus Listrik</h2>
+    <h2 class="text-center mb-5" style="color: #FFFFFF;"><i>Do's & Don'ts</i> dalam Penggunaan Bus Listrik</h2>
 
 <div class="salar">
     <div class="container py-4">
@@ -558,141 +640,30 @@
 </div>
 <!-- End Saran & Larangan dalam penggunaan bus -->
 
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-
 <!-- Start Tutorial Video -->
 <div class="tutor reveal" id="tutor">
-<h1>Video Tutorial Naik Bus</h1>
-    <iframe width="100%" height="720px"
-        src="https://www.youtube.com/">
-    </iframe>
+<h1 class="text-center mt-5 mb-5" style="color: #FFFFFF;">Video Tutorial Naik Bus</h1>
+       <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/watch?v=QF3fMdu18rI"
+            title="Tutorial naik bus" allowfullscreen>
+            </iframe>
+        </div>
 </div>
 <!-- End Tutorial Video -->
 
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-<p>a</p>
-
 <!-- Start Footer -->
 <footer class="bg-dark text-white text-center py-3" id="footer">
+    <p>Follow Us for more</p>
     <a href="https://www.instagram.com/connectiva.6/" target="_blank" class="text-white me-3">
-        <img src="img/logo.jpeg" style="height: 50px; width: 50px;">
+        <img src="img/logo.jpeg" style="height: 50px; width: 50px; border-radius: 50%;">
     </a>
 
+    <br>
+
+    <a href="https://www.instagram.com/connectiva.6/" target="_blank" class="text-white me-3">
+        Instagram
+    </a>
+    
     <br>
 
     <p>&copy; 2024 MKWK Team. All rights reserved.</p>
